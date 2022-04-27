@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kanban-pod
+  labels:
+    app: kanban-pod
+spec:
+  containers:
+    - name: kanban-app
+      image: nukkunda/kanban:latest
+      ports:
+        - containerPort: 80
