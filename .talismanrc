@@ -2,3 +2,6 @@ fileignoreconfig:
 - filename: yarn.lock
   checksum: e3a8bc218f816e1b49e6deb5abf01e2612beb10f3f18abd07cdcdc50211933a3
 version: ""
+- filename: Jenkinsfile
+  checksum: 0a2fbe333ec0f3609eca1b36753df91d941fdfbaad3b117d895dbe509d50b98b
+version: ""
