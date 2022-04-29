@@ -39,8 +39,6 @@ pipeline {
             steps {
                 sh '''
                     echo "deploying the application ........"
-                    gtimeout 10 kubectl delete services kanban-services || true
-                    gtimeout 10 kubectl delete pod kandan-pod || true
                     kubectl apply -f kanban-pod.yaml
                     kubectl apply -f kanban-service.yaml
                 '''

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanban-pod
+spec:
+  replicas: 6
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 10%
+      maxUnavailable: 10%
+  selector:
+    matchLabels:
+      app: kanban-pod
+  template:
+    metadata:
+      labels:
+        app: kanban-pod
+    spec:
+      containers:
+        - name: kanban-app
+          image: nukkunda/kanban:latest
+          ports:
+            - containerPort: 80
