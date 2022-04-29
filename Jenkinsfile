@@ -39,7 +39,7 @@ pipeline {
             steps {
                 sh '''
                     echo "deploying the application ........"
-                    kubectl apply -f kanban-pod.yaml
+                    kubectl apply -f kanban-deployment.yaml
                     kubectl apply -f kanban-service.yaml
                 '''
             }
