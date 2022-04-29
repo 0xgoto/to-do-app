@@ -37,11 +37,13 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+            withAWS(profile:'966185979698_Admin-Account-Access'){
                 sh '''
                     echo "deploying the application ........"
                     kubectl apply -f kanban-deployment.yaml
                     kubectl apply -f kanban-service.yaml
                 '''
+                }
             }
         }
     }
