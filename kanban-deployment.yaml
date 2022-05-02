@@ -20,6 +20,6 @@ spec:
       containers:
         - name: kanban-app
           image: nukkunda/kanban:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
-          imagePullPolicy: Always
