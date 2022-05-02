@@ -40,7 +40,6 @@ pipeline {
             withAWS(profile:'966185979698_Admin-Account-Access'){
                 sh '''
                     echo "deploying the application ........"
-                    if kubectl get all | grep -q "kanban-pod"; then kubectl delete deployments.apps kanban-pod; fi
                     kubectl apply -f kanban-deployment.yaml
                     kubectl apply -f kanban-service.yaml
                 '''
