@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: kanban-pod
   annotations:
-    date: `date`
+    date: {{date}}
 spec:
   replicas: 2
   strategy:
