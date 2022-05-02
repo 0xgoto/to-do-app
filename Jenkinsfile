@@ -39,9 +39,10 @@ pipeline {
             steps {
             withAWS(profile:'966185979698_Admin-Account-Access'){
                 sh '''
+                    echo "Cleaning cache........"
+                    kubectl apply -f https://raw.githubusercontent.com/andyzhangx/demo/master/dev/docker-image-cleanup.yaml
                     echo "deploying the application ........"
                     kubectl apply -f kanban-deployment.yaml
-                    kubectl set image deployment/kanban-pod kanban-app="${DOCKER_IMAGE_NAME}":"$BUILD_NUMBER"
                     kubectl apply -f kanban-service.yaml
                 '''
                 }
