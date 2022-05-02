@@ -41,6 +41,7 @@ pipeline {
                 sh '''
                     echo "deploying the application ........"
                     kubectl apply -f kanban-deployment.yaml
+                    kubectl patch deployment kanban-pod -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`date +'%s'`\"}}}}}"
                     kubectl rollout restart deployment/kanban-pod
                     kubectl apply -f kanban-service.yaml
                 '''
