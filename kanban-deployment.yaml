@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: kanban-pod
 spec:
-  replicas: 6
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
