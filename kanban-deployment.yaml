@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kanban-pod
+  annotations:
+    date: `date`
 spec:
   replicas: 2
   strategy:
