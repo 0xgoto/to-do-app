@@ -37,10 +37,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            withAWS(profile:'966185979698_Admin-Account-Access'){
+            withAWS(profile:'bhava'){
                 sh '''
-                    echo "Cleaning cache........"
-                    kubectl apply -f https://raw.githubusercontent.com/andyzhangx/demo/master/dev/docker-image-cleanup.yaml
                     echo "deploying the application ........"
                     kubectl apply -f kanban-deployment.yaml
                     kubectl apply -f kanban-service.yaml
