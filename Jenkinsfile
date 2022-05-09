@@ -40,7 +40,7 @@ pipeline {
             withAWS(profile:'bhava'){
                 sh '''
                     echo "deploying the application ........"
-                    kubectl apply -f kanban-deployment.yaml
+                    kubectl apply -f kanban-deployment.yaml --force
                     kubectl apply -f kanban-service.yaml
                 '''
                 }
