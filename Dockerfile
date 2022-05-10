@@ -4,7 +4,9 @@ WORKDIR /usr/app
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install
-COPY . .
+COPY public .
+COPY src .
+COPY index.html .
 RUN ["yarn", "build"]
 
 FROM nginx:1.12-alpine

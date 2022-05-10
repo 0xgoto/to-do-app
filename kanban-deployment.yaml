@@ -5,10 +5,10 @@ metadata:
 spec:
   replicas: 2
   strategy:
-    type: RollingUpdate
+    type: Recreate
     rollingUpdate:
-      maxSurge: 10%
-      maxUnavailable: 10%
+      maxSurge: 4
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: kanban-pod
