@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 2
   strategy:
-    type: Recreate
+    type: RollingUpdate
     rollingUpdate:
       maxSurge: 4
       maxUnavailable: 1

@@ -41,6 +41,7 @@ pipeline {
                 sh '''
                     echo "deploying the application ........"
                     kubectl apply -f kanban-deployment.yaml
+                    kubectl set image deployment kanban-pod kanban-app=nukkunda/kanban:"$BUILD_NUMBER"
                     kubectl apply -f kanban-service.yaml
                 '''
                 }

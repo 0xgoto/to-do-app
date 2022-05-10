@@ -4,8 +4,8 @@ WORKDIR /usr/app
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install
-COPY public .
-COPY src .
+COPY public/. public/.
+COPY src/. src/.
 COPY index.html .
 RUN ["yarn", "build"]
 
